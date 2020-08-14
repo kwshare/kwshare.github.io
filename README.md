@@ -24,4 +24,4 @@ WEB自动化测试、APP自动化测试、接口自动化测试、性能测试�
 ## 联系方式
 
 - QQ : 125864004
-- EMAIL : goufaner520@gmail.com
+- EMAIL : adnnyone@outlook.com
