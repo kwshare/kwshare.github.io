@@ -25,9 +25,9 @@ nocomments: true
 >
 > **Email** : adnnyone@outlook.com
 >
-> **博客园博客**:[https://www.cnblogs.com/adnny/](https://www.cnblogs.com/adnny/)
+> **博客园博客** : [https://www.cnblogs.com/adnny/](https://www.cnblogs.com/adnny/)
 >
-> 你也可以通过以下QQ群找到我：[125864004](http://wpa.qq.com/msgrd?v=3&uin=125864004&site=qq&menu=yes)
+> 你也可以通过以下QQ找到我 ：[125864004](http://wpa.qq.com/msgrd?v=3&uin=125864004&site=qq&menu=yes)
 
 ## 感谢
 
