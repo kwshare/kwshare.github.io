@@ -3,7 +3,7 @@ layout: post
 title:  "Python —— python split(), os.path.split()和os.path.splitext()函数"
 date:   2020-08-22 22:46:13
 categories: Python
-permalink: /archivers/how-to-using-split-path.split-path.splitext
+permalink: /archivers/how-to-using-split-path-split-path-splitext
 ---
 
 ### 1. split()
