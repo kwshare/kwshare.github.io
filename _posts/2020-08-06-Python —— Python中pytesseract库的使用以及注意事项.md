@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Python —— Python中pytesseract库的使用以及注意事项"
-date:   2019-08-06 22:46:13
+date:   2020-08-06 22:46:13
 categories: Python
 permalink: /archivers/how-to-use-pytesseract
 ---
