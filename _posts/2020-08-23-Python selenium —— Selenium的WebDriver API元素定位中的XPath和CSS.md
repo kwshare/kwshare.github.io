@@ -7,6 +7,7 @@ permalink: /archivers/how-ti-use-Selenium-for-XPath-and-CSS
 ---
 
 元素的定位和操作是自动化测试的核心部分，其中操作又是建立在定位的基础上的。
+
 本文百度页面为例子，带入深入了解XPath和CSS定位的所有方法，代码较多，文字只提示重点关注的地方！！！
 
 # 浏览器的常规操作
@@ -70,28 +71,50 @@ driver.quit()
 
 # 八大元素定位方法
 1、id定位
+
 2、name定位
+
 3、class_name定位
+
 4、link_text定位(针对a标签)
+
 5、partial_link_text定位(针对a标签)
+
 6、tag_name标签名定位
+
 7、xpath定位
+
 （1）绝对路径（绝对路径使用"/"）
+
 （2）相对路径（相对路径使用"//"）
+
 （3）索引定位
-         > 1）具体格式：//标签名[@属性="属性值"]
-         > 2）支持使用and和or关键字，多个属性一起定位元素。
+
+> 1）具体格式：//标签名[@属性="属性值"]
+> 2）支持使用and和or关键字，多个属性一起定位元素。
+
 （4）属性定位
+
 （5）部分的属性值
+
 （6）通过文本定位
+
 （7）各种xpath组合
+
 （8）通配符*
+
 8、css选择器定位
+
 （1）绝对路径
+
 （2）相对路径
+
 （3）通过属性定位
+
 （4）通过部分属性值（也称为模糊方法定位）
+
 （5）通过查询子元素
+
 （6）查找兄弟元素
 
 ## id定位
@@ -149,7 +172,7 @@ print(
 
 
 ## xpath定位
-### (1)绝对路径（绝对路径使用"/"）
+(1)绝对路径（绝对路径使用"/"）
 ```python
 # 举例：定位搜索框输入搜索内容"测试玉米君"
 # driver.find_element_by_xpath("/html/body/div/div/div/div/div/form/span/input").send_keys("测试玉米君")
@@ -158,7 +181,7 @@ print(
 ```
 
 
-### (2)相对路径（相对路径使用"//"）
+(2)相对路径（相对路径使用"//"）
 ```python
 # 举例：定位搜索框输入搜索内容"测试玉米君"
 # driver.find_element_by_xpath("//form/span/input").send_keys("测试玉米君")
@@ -167,7 +190,7 @@ print(f'7.2、xpath相对路径定位 获取到的元素的id属性内容:{drive
 ```
 
 
-### (3)索引定位
+(3)索引定位
 索引从"1"开始，默认不填写就是"1"
 ```python
 # 举例：定位 百度一下 按钮
@@ -187,7 +210,7 @@ print(
 ```
 
 
-### (4)属性定位 
+(4)属性定位 
 使用"@"符号呼叫属性
 ```python
 # driver.find_element_by_xpath("//input[@autocomplete='off']").send_keys("测试玉米君")
@@ -199,7 +222,7 @@ print('7.4.2、xpath属性定位 取到的元素的id属性内容:{}'.format(
 ```
 
 
-### (5)部分的属性值
+(5)部分的属性值
 也称为模糊方法定位
 ```python
 # 元素属性值开头包含内容：starts-with()
@@ -217,7 +240,7 @@ print('7.5.3、xpath部分的属性值定位 取到的元素的class属性内容
 ```
 
 
-### (6)通过文本定位
+(6)通过文本定位
 ```python
 # 元素文本在xpath中可以通过text()函数获取，也可以用其来进行元素定位。
 # driver.find_element_by_xpath("//a[text()='新闻']").click()
@@ -228,7 +251,7 @@ print('7.6.2、xpath文本定位 取到的元素的style属性内容:{}'.format(
 ```
 
 
-### (7)各种xpath组合
+(7)各种xpath组合
 ```python
 # driver.find_element_by_xpath("//a[contains(text(),'新闻')]").click()
 print('7.7.1、各种xpath组合 取到的元素的文本内容:{}'.format(driver.find_element_by_xpath("//a[contains(text(),'新闻')]").text))  # 新闻
@@ -240,7 +263,7 @@ print('7.7.3、各种xpath组合 取到的元素的id属性内容:{}'.format(
 ```
 
 
-### (8)通配符*
+(8)通配符*
 ```python
 # driver.find_element_by_xpath("//*[@*='kw']").send_keys("测试玉米君")
 print('7.8、xpath通配符*定位 取到的元素的id属性内容:{}'.format(
@@ -250,7 +273,7 @@ print('7.8、xpath通配符*定位 取到的元素的id属性内容:{}'.format(
 
 ## css选择器定位
 html,javascript,css,h5+css3，通过.找class，通过#找id
-### (1)绝对路径
+(1)绝对路径
 ```python
 # driver.find_element_by_css_selector("html body div div div div div form span input").send_keys("测试玉米君")
 print('8.1.1、css绝对路径定位 取到的元素的id属性内容:{}'.format(
@@ -266,7 +289,7 @@ print('8.1.3、css绝对路径定位 取到的元素的id属性内容:{}'.format
 ```
 
 
-### (2)相对路径
+(2)相对路径
 通过class(.)和id(#)定位）可以和标签名组合使用
 ```python
 # driver.find_element_by_css_selector("#kw").send_keys("测试玉米君")
@@ -284,7 +307,7 @@ print('8.2.4、css相对路径定位 取到的元素的id属性内容:{}'.format
 ```
 
 
-### (3)通过元素属性定位
+(3)通过元素属性定位
 ```python
 # 具体格式：标签名[属性="属性值"] 支持使用多个属性一起定位元素
 # driver.find_element_by_css_selector("input[autocomplete='off']").send_keys("测试玉米君")
@@ -296,10 +319,14 @@ print('8.3.2、css元素属性定位 取到的元素的id属性内容:{}'.format
 ```
 
 
-### (4)通过部分元素属性值（也称为模糊方法定位）
-#### 1)元素属性值开头包含内容：^=
-#### 2)元素属性值结尾包含内容：$=
-#### 3)元素属性值当中包含内容：*=
+(4)通过部分元素属性值（也称为模糊方法定位）
+
+1)元素属性值开头包含内容：^=
+
+2)元素属性值结尾包含内容：$=
+
+3)元素属性值当中包含内容：*=
+
 ```python
 # driver.find_element_by_css_selector("input[autocomplete^='of']").send_keys("测试玉米君")
 print('8.4.1、css部分属性值定位 取到的元素的autocomplete属性内容:{}'.format(
@@ -313,13 +340,21 @@ print('8.4.3、css部分属性值定位 取到的元素的autocomplete属性内�
 ```
 
 
-### (5)通过查询子元素（类似xpath中的索引的方法）
-#### 1）子元素：A>B
-#### 2）后代元素：A B（类似>）
-#### 3）第一个后代元素：first-child
-#### 4）最后一个后代元素：last-child[等同于 p:nth-last-child(1)]
-#### 5）第n个子元素：nth-child(N)[类同:nth-of-type(N)]
-#### 6）通过空格和>查找子元素（只能一级一级找）
+(5)通过查询子元素（类似xpath中的索引的方法）
+
+ 1）子元素：A>B
+
+
+ 2）后代元素：A B（类似>）
+
+ 3）第一个后代元素：first-child
+
+ 4）最后一个后代元素：last-child[等同于 p:nth-last-child(1)]
+
+ 5）第n个子元素：nth-child(N)[类同:nth-of-type(N)]
+
+ 6）通过空格和>查找子元素（只能一级一级找）
+
 ```python
 # driver.find_element_by_css_selector("div#s-top-left a:nth-child(1)").click()
 print('8.5.1、css子元素定位 取到的元素的文本内容:{}'.format(
@@ -339,12 +374,17 @@ print('8.5.5、css子元素定位 取到的元素的文本内容:{}'.format(
 ```
 
 
-### (6)查找兄弟元素
-#### 1）同层级下一个元素：+
-#### 2）选择同层级多个相同标签的元素：~
-#### 备注：
-##### +号可以多次使用
-##### ~号一般返回的是多个元素，要用find_elements接收
+(6)查找兄弟元素
+1）同层级下一个元素：+
+
+2）选择同层级多个相同标签的元素：~
+
+ 备注：
+
+ +号可以多次使用
+
+ ~号一般返回的是多个元素，要用find_elements接收
+
 ```python
 # driver.find_element_by_css_selector("div#s-top-left a +a").click()
 print('8.6.1、css子元素定位 取到的元素的文本内容:{}'.format(
